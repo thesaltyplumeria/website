@@ -218,10 +218,12 @@
       overflow:hidden;
       border:1px solid rgba(255,255,255,.14);
       aspect-ratio:16/9;
+      background: rgba(255,255,255,.04);
     }
     .video-frame iframe{
-      width:100%;
-      height:100%;
+      display:block;
+      width:100% !important;
+      height:100% !important;
       border:0;
     }
     .feature h3{margin:0 0 6px; color: var(--white)}
@@ -360,7 +362,11 @@
             A portion of proceeds support marine conservation efforts.
           </p>
 
-          <div class="hero-ac
+          <div class="hero-actions">
+            <a class="btn primary" href="https://www.etsy.com/shop/thesaltyplumeria/?etsrc=sdt" target="_blank" rel="noopener">Shop on Etsy</a>
+            <a class="btn" href="#stories">Watch a Story</a>
+            <a class="btn" href="#contact">Collaborate</a>
+          </div>
 
           <div class="card" style="margin-top:16px">
             <div class="card-pad">
@@ -413,7 +419,7 @@
             </ul>
             <div class="divider"></div>
             <div style="display:flex; gap:10px; flex-wrap:wrap">
-              <a class="btn primary" href="#impact">See our conservation commitment</a>
+              <a class="btn primary" href="https://www.etsy.com/shop/thesaltyplumeria/?etsrc=sdt" target="_blank" rel="noopener">Shop on Etsy</a>
               <a class="btn" href="#contact">Partner with us</a>
             </div>
           </div>
@@ -432,139 +438,52 @@
         </div>
 
         <div class="grid-3">
+          <!-- Story #1 -->
           <div class="card feature">
             <div class="card-pad">
               <span class="pill">Story #1</span>
               <h3>Sea Turtle Story</h3>
-              <div style="margin-top:12px; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.14)">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ft_cxaloKKM" title="Sea Turtle Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="aspect-ratio:16/9; border:0;"></iframe>
+              <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/Ft_cxaloKKM" title="Sea Turtle Story" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="margin-top:auto; display:flex; gap:10px; flex-wrap:wrap">
+                <a class="btn" href="#contact">Request a script</a>
               </div>
             </div>
           </div>
-          </div>
 
+          <!-- Featured Video -->
           <div class="card feature">
             <div class="card-pad">
               <span class="pill">Featured Video</span>
-              <h3>Featured Video</h3>
-              <div style="margin-top:12px; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.14)">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/AskEqain8PA" title="The Salty Plumeria Featured Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="aspect-ratio:16/9; border:0;"></iframe>
+              <h3>Where the Ocean Leads</h3>
+              <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/AskEqain8PA" title="Featured Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="margin-top:auto; display:flex; gap:10px; flex-wrap:wrap">
+                <a class="btn primary" href="https://www.etsy.com/shop/thesaltyplumeria/?etsrc=sdt" target="_blank" rel="noopener">Shop on Etsy</a>
               </div>
             </div>
           </div>
 
+          <!-- Tropical Symbolism -->
           <div class="card feature">
             <div class="card-pad">
               <span class="pill">Tropical Symbolism</span>
               <h3>Plumeria as a Promise</h3>
-              <div style="margin-top:12px; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.14)">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gqnf0_20OJU" title="Tropical Symbolism Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="aspect-ratio:16/9; border:0;"></iframe>
+              <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/gqnf0_20OJU" title="Tropical Symbolism" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="margin-top:auto; display:flex; gap:10px; flex-wrap:wrap">
+                <a class="btn" href="#mission">Read the mission</a>
               </div>
             </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Shop -->
-    <section id="shop" class="alt">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Shop (Preview)</h2>
-            <p>Replace these with your real products (Etsy, Shopify, Squarespace Commerce, or a simple checkout link).</p>
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <div class="card shop-card">
-            <div class="card-pad">
-              <span class="pill">Prints</span>
-              <h3>Ocean Art Prints</h3>
-              <p>High-quality prints inspired by sea turtles, reefs, and tropical light.</p>
-              <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-                <a class="btn primary" href="#contact">Ask about drops</a>
-                <a class="btn" href="#impact">Portion to conservation</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="card shop-card">
-            <div class="card-pad">
-              <span class="pill">Merch</span>
-              <h3>Apparel & Accessories</h3>
-              <p>Simple, clean designs—made for ocean lovers and conservation supporters.</p>
-              <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
-                <a class="btn primary" href="#contact">Get notified</a>
-                <a class="btn" href="#stories">Share a story</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:14px">
-          <div class="card-pad" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
-            <div style="color: rgba(255,255,255,.85)">
-              <strong>Quick setup option:</strong> link your Shop buttons to Etsy or a Linktree while you build the full store.
-            </div>
-            <a class="btn" href="#contact">I want a shop setup plan</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Impact -->
-    <section id="impact">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Conservation Commitment</h2>
-            <p>Transparent giving builds trust. Here’s a clean way to show where support goes.</p>
-          </div>
-        </div>
-
-        <div class="grid-3">
-          <div class="card feature">
-            <div class="card-pad">
-              <span class="pill">Giving</span>
-              <h3>Portion of proceeds</h3>
-              <p>
-                A portion of every purchase supports marine conservation.
-                Add your exact % when you decide it.
-              </p>
-            </div>
-          </div>
-          <div class="card feature">
-            <div class="card-pad">
-              <span class="pill">Partners</span>
-              <h3>Who you support</h3>
-              <p>
-                List the org(s) here (local sea turtle rehab, rescue, beach cleanups, etc.).
-              </p>
-            </div>
-          </div>
-          <div class="card feature">
-            <div class="card-pad">
-              <span class="pill">Updates</span>
-              <h3>Impact posts</h3>
-              <p>
-                Share monthly/quarterly receipts, volunteer days, and story highlights.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:14px">
-          <div class="card-pad" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
-            <div style="color: rgba(255,255,255,.85)">
-              <strong>CTA idea:</strong> “Support conservation” can link to your chosen partner donation page or your own giving fund.
-            </div>
-            <a class="btn primary" href="#contact">Add my partner links</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- (Shop & Conservation sections removed — using Etsy link instead) -->
 
     <!-- Contact -->
     <section id="contact" class="alt">
@@ -614,6 +533,7 @@
                 <a class="btn" href="https://x.com/saltyplumeria" target="_blank" rel="noopener">X (Twitter)</a>
                 <a class="btn" href="https://www.facebook.com/profile.php?id=61588374456334" target="_blank" rel="noopener">Facebook</a>
                 <a class="btn" href="https://www.threads.com/@thesaltyplumeria" target="_blank" rel="noopener">Threads</a>
+                <a class="btn primary" href="https://www.etsy.com/shop/thesaltyplumeria/?etsrc=sdt" target="_blank" rel="noopener">Etsy Shop</a>
               </div>
 
               <div class="divider"></div>
