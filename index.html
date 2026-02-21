@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Salty Plumeria | Ocean Art & Conservation</title>
+  <meta name="description" content="Ocean-inspired art rooted in conservation. Through sea turtle storytelling and tropical symbolism, we protect what we love." />
+  <meta name="theme-color" content="#071b3a" />
+  <style>
+    :root{
+      --navy:#071b3a;
+      --deep:#04122a;
+      --ink:#0b1220;
+      --seafoam:#7be7d6;
+      --sand:#f6f1e6;
+      --white:#ffffff;
+      --muted: rgba(255,255,255,.78);
+      --shadow: 0 12px 30px rgba(0,0,0,.28);
+      --radius: 18px;
+      --max: 1140px;
+    }
+
+    /* Base */
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: #0a1630;
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(92vw, var(--max)); margin-inline:auto}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(4,18,42,.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding: 14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 220px;
+    }
+    .brand-mark{
+      width:40px;
+      height:40px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.10);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+    }
+    .brand-mark img{width:100%;height:100%;object-fit:cover}
+    .brand-title{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .brand-title strong{color:var(--white); font-weight:700; letter-spacing:.2px}
+    .brand-title span{color:rgba(255,255,255,.72); font-size:12px}
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    nav a{
+      color: rgba(255,255,255,.88);
+      font-size: 14px;
+      padding: 10px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: .18s ease;
+    }
+    nav a:hover{border-color: rgba(123,231,214,.35); background: rgba(123,231,214,.10)}
+
+    .cta-row{display:flex; gap:10px; align-items:center}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: var(--white);
+      font-weight: 650;
+      letter-spacing:.2px;
+      cursor:pointer;
+      transition:.18s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10)}
+    .btn.primary{
+      border-color: rgba(123,231,214,.55);
+      background: linear-gradient(135deg, rgba(123,231,214,.20), rgba(255,255,255,.06));
+    }
+
+    /* Hero */
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding: 54px 0 28px;
+      color: var(--white);
+      background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(123,231,214,.22), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(255,255,255,.10), transparent 45%),
+        linear-gradient(180deg, var(--navy), var(--deep));
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(800px 300px at 50% 0%, rgba(255,255,255,.10), transparent 65%);
+      pointer-events:none;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 26px;
+      align-items:center;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.88);
+      font-size: 13px;
+    }
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height:1.03;
+      letter-spacing: -.6px;
+    }
+    .lead{
+      font-size: 16.5px;
+      color: var(--muted);
+      max-width: 54ch;
+      margin: 0 0 18px;
+    }
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top: 8px}
+
+    .card{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-pad{padding: 16px}
+
+    .logo-panel{
+      padding: 18px;
+      display:grid;
+      gap: 12px;
+      align-items:center;
+      justify-items:center;
+    }
+    .logo-panel img{
+      width: min(420px, 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+    }
+
+    /* Section */
+    section{padding: 44px 0; background: #071429}
+    section.alt{background: #071b3a}
+    .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom: 16px}
+    .section-head h2{margin:0;color:var(--white); font-size: clamp(22px, 2.6vw, 30px)}
+    .section-head p{margin:0;color: rgba(255,255,255,.75); max-width: 58ch}
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .feature h3{margin:0 0 6px; color: var(--white)}
+    .feature p{margin:0; color: rgba(255,255,255,.78)}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(123,231,214,.35);
+      background: rgba(123,231,214,.10);
+      color: rgba(255,255,255,.90);
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    /* Mission banner */
+    .mission-banner{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items:stretch;
+    }
+    .mission-art{
+      background: rgba(255,255,255,.05);
+      border: 1px dashed rgba(255,255,255,.20);
+      border-radius: var(--radius);
+      overflow:hidden;
+      min-height: 260px;
+    }
+    .mission-art img{width:100%;height:100%;object-fit:cover}
+    .mission-copy{
+      padding: 18px;
+    }
+    .mission-copy h3{color:var(--white); margin: 0 0 10px}
+    .mission-copy p{color: rgba(255,255,255,.78); margin: 0 0 12px}
+    .divider{height:1px;background: rgba(255,255,255,.12); margin: 14px 0}
+    ul.clean{margin: 0; padding-left: 18px; color: rgba(255,255,255,.80)}
+
+    /* Shop preview */
+    .grid-2{display:grid; grid-template-columns: 1fr 1fr; gap: 14px}
+    .shop-card h3{margin:0 0 6px; color: var(--white)}
+    .shop-card p{margin:0; color: rgba(255,255,255,.78)}
+
+    /* Form */
+    form{display:grid; gap:10px}
+    .field{display:grid; gap:6px}
+    label{color: rgba(255,255,255,.82); font-size: 13px}
+    input, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--white);
+      outline:none;
+    }
+    input::placeholder, textarea::placeholder{color: rgba(255,255,255,.55)}
+    textarea{min-height: 110px; resize: vertical}
+
+    /* Footer */
+    footer{
+      background: #04122a;
+      color: rgba(255,255,255,.75);
+      padding: 26px 0;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .footer-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap: 14px; align-items:flex-start}
+    .fine{font-size: 12px; color: rgba(255,255,255,.62)}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr;}
+      nav{display:none}
+      .grid-3{grid-template-columns: 1fr;}
+      .mission-banner{grid-template-columns: 1fr;}
+      .grid-2{grid-template-columns: 1fr;}
+      .footer-grid{grid-template-columns: 1fr;}
+      .brand{min-width:auto}
+    }
+
+    /* Simple scroll offset for anchors */
+    [id]{scroll-margin-top: 90px}
+  </style>
+</head>
+
+<body>
+  <!--
+    HOW TO USE YOUR UPLOADED IMAGES
+    1) Put these image files in the same folder as this HTML file:
+       - 1000009035.png  (your logo)
+       - 1000009036.png  (your “Protect • Create • Inspire” mission image)
+
+    2) If you rename files, update the src paths below.
+  -->
+
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="The Salty Plumeria home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="1000009035.png" alt="" />
+        </span>
+        <span class="brand-title">
+          <strong>The Salty Plumeria</strong>
+          <span>Ocean Art & Conservation</span>
+        </span>
+      </a>
+
+      <nav aria-label="Primary">
+        <a href="#mission">Mission</a>
+        <a href="#stories">Sea Turtle Stories</a>
+        <a href="#shop">Shop</a>
+        <a href="#impact">Conservation</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="cta-row">
+        <a class="btn" href="#shop" aria-label="Shop ocean art">Shop</a>
+        <a class="btn primary" href="#impact" aria-label="Learn about our conservation impact">Support Conservation</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="kicker">
+            <span aria-hidden="true">🌺</span>
+            <span>Ocean-inspired art rooted in conservation</span>
+          </div>
+
+          <h1>Protect what you love—through art, story, and sea-turtle hope.</h1>
+
+          <p class="lead">
+            The Salty Plumeria is ocean-inspired art rooted in conservation. Through sea turtle storytelling and tropical symbolism, we protect what we love.
+            A portion of proceeds support marine conservation efforts.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#shop">Explore the Shop</a>
+            <a class="btn" href="#stories">Watch a Story</a>
+            <a class="btn" href="#contact">Collaborate</a>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <div class="card-pad">
+              <span class="pill">Protect • Create • Inspire</span>
+              <div style="display:flex; gap:10px; flex-wrap:wrap">
+                <span class="btn" style="padding:8px 10px; font-weight:600">Sea Turtle Storytelling</span>
+                <span class="btn" style="padding:8px 10px; font-weight:600">Tropical Symbolism</span>
+                <span class="btn" style="padding:8px 10px; font-weight:600">Conservation Giving</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <div class="logo-panel">
+            <img src="1000009035.png" alt="The Salty Plumeria logo" />
+            <div style="text-align:center; color: rgba(255,255,255,.78); font-size: 13px; max-width: 42ch">
+              Tip: swap the hero image later with a sea turtle photo/video still for an even more “Turtle Hospital” feel.
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <section id="mission" class="alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Our Mission</h2>
+            <p>Ocean art with a purpose—designed to protect marine life, one story at a time.</p>
+          </div>
+        </div>
+
+        <div class="mission-banner">
+          <div class="mission-art">
+            <img src="1000009036.png" alt="Protect • Create • Inspire" />
+          </div>
+          <div class="card mission-copy">
+            <h3>The Salty Plumeria is ocean-inspired art rooted in conservation.</h3>
+            <p>
+              Through sea turtle storytelling and tropical symbolism, we protect what we love.
+              A portion of proceeds support marine conservation efforts.
+            </p>
+            <div class="divider"></div>
+            <ul class="clean">
+              <li><strong>Protect</strong>: advocate, educate, and give back.</li>
+              <li><strong>Create</strong>: art, prints, and drops inspired by the ocean.</li>
+              <li><strong>Inspire</strong>: stories that move people to care for what’s wild.</li>
+            </ul>
+            <div class="divider"></div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn primary" href="#impact">See our conservation commitment</a>
+              <a class="btn" href="#contact">Partner with us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stories -->
+    <section id="stories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Sea Turtle Stories</h2>
+            <p>Short, shareable moments that help people feel connected to the ocean.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card feature">
+            <div class="card-pad">
+              <span class="pill">Story #1</span>
+              <h3>“Before we named these waters…”</h3>
+              <p>
+                A 15–20 second reel script you can overlay on turtle footage.
+                (Swap this card text anytime.)
+              </p>
+              <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+                <a class="btn" href="#contact">Request a script</a>
+                <a class="btn" href="#shop">Shop to support</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card feature">
+            <div class="card-pad">
+              <span class="pill">Featured Video</span>
+              <h3>Embed a Reel / YouTube</h3>
+              <p>
+                Replace the placeholder below with an embed code.
+              </p>
+              <div style="margin-top:12px; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.14)">
+                <div style="aspect-ratio: 16 / 9; display:grid; place-items:center; background: rgba(255,255,255,.06); color: rgba(255,255,255,.70)">
+                  Paste embed here
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card feature">
+            <div class="card-pad">
+              <span class="pill">Tropical Symbolism</span>
+              <h3>Plumeria as a promise</h3>
+              <p>
+                A symbol of warmth, return, and care—woven into ocean-inspired designs.
+              </p>
+              <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+                <a class="btn" href="#mission">Read the mission</a>
+                <a class="btn" href="#impact">Learn the impact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop" class="alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Shop (Preview)</h2>
+            <p>Replace these with your real products (Etsy, Shopify, Squarespace Commerce, or a simple checkout link).</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card shop-card">
+            <div class="card-pad">
+              <span class="pill">Prints</span>
+              <h3>Ocean Art Prints</h3>
+              <p>High-quality prints inspired by sea turtles, reefs, and tropical light.</p>
+              <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+                <a class="btn primary" href="#contact">Ask about drops</a>
+                <a class="btn" href="#impact">Portion to conservation</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shop-card">
+            <div class="card-pad">
+              <span class="pill">Merch</span>
+              <h3>Apparel & Accessories</h3>
+              <p>Simple, clean designs—made for ocean lovers and conservation supporters.</p>
+              <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+                <a class="btn primary" href="#contact">Get notified</a>
+                <a class="btn" href="#stories">Share a story</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="card-pad" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+            <div style="color: rgba(255,255,255,.85)">
+              <strong>Quick setup option:</strong> link your Shop buttons to Etsy or a Linktree while you build the full store.
+            </div>
+            <a class="btn" href="#contact">I want a shop setup plan</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact -->
+    <section id="impact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Conservation Commitment</h2>
+            <p>Transparent giving builds trust. Here’s a clean way to show where support goes.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card feature">
+            <div class="card-pad">
+              <span class="pill">Giving</span>
+              <h3>Portion of proceeds</h3>
+              <p>
+                A portion of every purchase supports marine conservation.
+                Add your exact % when you decide it.
+              </p>
+            </div>
+          </div>
+          <div class="card feature">
+            <div class="card-pad">
+              <span class="pill">Partners</span>
+              <h3>Who you support</h3>
+              <p>
+                List the org(s) here (local sea turtle rehab, rescue, beach cleanups, etc.).
+              </p>
+            </div>
+          </div>
+          <div class="card feature">
+            <div class="card-pad">
+              <span class="pill">Updates</span>
+              <h3>Impact posts</h3>
+              <p>
+                Share monthly/quarterly receipts, volunteer days, and story highlights.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="card-pad" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+            <div style="color: rgba(255,255,255,.85)">
+              <strong>CTA idea:</strong> “Support conservation” can link to your chosen partner donation page or your own giving fund.
+            </div>
+            <a class="btn primary" href="#contact">Add my partner links</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Contact & Collaborations</h2>
+            <p>Brands, creators, and conservation partners—let’s build something meaningful.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-pad">
+              <span class="pill">Send a message</span>
+              <form onsubmit="return handleSubmit(event)">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" placeholder="Your name" required />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="you@example.com" required />
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Tell us what you’re building…" required></textarea>
+                </div>
+                <button class="btn primary" type="submit">Send</button>
+                <p class="fine" style="margin:0">
+                  This demo form opens your email app. When you’re ready, I can wire it to a real form endpoint.
+                </p>
+              </form>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-pad">
+              <span class="pill">Quick Links</span>
+              <h3 style="margin:0 0 8px; color: var(--white)">Find us online</h3>
+              <p style="margin:0 0 12px; color: rgba(255,255,255,.78)">
+                Add your socials + shop links here (Instagram, TikTok, YouTube, Threads, Etsy, etc.).
+              </p>
+              <div style="display:grid; gap:10px">
+                <a class="btn" href="https://www.instagram.com/thesaltyplumeria" target="_blank" rel="noopener">Instagram</a>
+                <a class="btn" href="https://www.youtube.com/@TheSaltyPlumeria" target="_blank" rel="noopener">YouTube</a>
+                <a class="btn" href="https://x.com/saltyplumeria" target="_blank" rel="noopener">X (Twitter)</a>
+                <a class="btn" href="https://www.facebook.com/profile.php?id=61588374456334" target="_blank" rel="noopener">Facebook</a>
+                <a class="btn" href="https://www.threads.com/@thesaltyplumeria" target="_blank" rel="noopener">Threads</a>
+              </div>
+
+              <div class="divider"></div>
+              <h3 style="margin:0 0 8px; color: var(--white)">Newsletter</h3>
+              <p style="margin:0 0 12px; color: rgba(255,255,255,.78)">Get drop alerts + conservation updates.</p>
+              <div style="display:flex; gap:10px; flex-wrap:wrap">
+                <input style="flex:1; min-width:220px" placeholder="Email address" aria-label="Email address" />
+                <button class="btn primary" onclick="alert('Connect this to Mailchimp/ConvertKit later.');">Join</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px">
+          <div class="brand-mark" style="width:44px;height:44px">
+            <img src="1000009035.png" alt="" />
+          </div>
+          <div>
+            <div style="color: var(--white); font-weight:800">The Salty Plumeria</div>
+            <div class="fine">Ocean Art & Conservation</div>
+          </div>
+        </div>
+        <div class="fine">
+          © <span id="year"></span> The Salty Plumeria. Protect • Create • Inspire.
+        </div>
+      </div>
+      <div>
+        <div class="fine" style="margin-bottom:8px">
+          <strong style="color: rgba(255,255,255,.80)">Note:</strong> This is a clean, Turtle-Hospital-inspired layout that’s easy to deploy as a static site.
+          If you want, I can convert this into a full multi-page site (About, Shop, Stories, Impact) or a Shopify/Squarespace theme.
+        </div>
+        <div class="fine">Made with ❤️ for sea turtles.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Demo form handler: opens a prefilled email
+    function handleSubmit(e){
+      e.preventDefault();
+      const form = e.target;
+      const name = encodeURIComponent(form.name.value || '');
+      const email = encodeURIComponent(form.email.value || '');
+      const message = encodeURIComponent(form.message.value || '');
+      const subject = encodeURIComponent('Website inquiry — The Salty Plumeria');
+      const body = encodeURIComponent(`Name: ${decodeURIComponent(name)}\nEmail: ${decodeURIComponent(email)}\n\n${decodeURIComponent(message)}`);
+      // Replace the email below with your business email when ready:
+      window.location.href = `mailto:yourname@thesaltyplumeria.com?subject=${subject}&body=${body}`;
+      return false;
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
